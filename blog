@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caitlin Willson | Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* * 🎨 Custom Aesthetic Styling (Repeated for multi-page consistency) */
+        
+        :root {
+            --color-cream: #FFFBF5; 
+            --color-linen: #EFEBE5; 
+            --color-sage: #A3B5A1; 
+            --color-rose: #D9A8A5; 
+            --color-text: #3E383A;  
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-cream);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            scroll-behavior: smooth;
+        }
+
+        .header-text {
+            font-family: var(--font-serif);
+            font-weight: 600;
+        }
+
+        .section-divider {
+            position: relative;
+            height: 1px;
+            background-color: var(--color-linen);
+            margin: 4rem 0;
+            overflow: visible;
+        }
+
+        .section-divider::before {
+            content: '•';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--color-sage);
+            font-size: 2.5rem;
+            line-height: 0;
+            padding: 0 1rem;
+            background-color: var(--color-cream);
+            z-index: 10;
+        }
+
+        .btn-primary {
+            background-color: var(--color-sage);
+            color: var(--color-cream);
+            font-weight: 500;
+            transition: background-color 0.2s;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #7D907A; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar (Consistent across all pages) -->
+    <nav class="sticky top-0 z-50 bg-white/95 shadow-md backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="header-text text-2xl" style="color: var(--color-text);">Caitlin Willson | Portfolio</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="about.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">About Me</a>
+                    <a href="portfolio.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Portfolio</a>
+                    <a href="blog.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+
+        <!-- BLOG SECTION -->
+        <section id="blog">
+            <h2 class="header-text text-4xl md:text-5xl text-center mb-16" style="color: var(--color-rose);">
+                Latest Insights & Digital Work
+            </h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Blog Post 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4" style="border-color: var(--color-sage);">
+                    <p class="text-sm font-light text-gray-500 mb-2">Editorial | October 29, 2025</p>
+                    <h3 class="header-text text-2xl mb-3" style="color: var(--color-text);">The Subtle Power of Muted Palettes in Branding</h3>
+                    <p class="text-gray-700 mb-4">An exploration of how soft, earthy colors communicate stability and luxury, moving away from high saturation trends. This ties directly into our portfolio's aesthetic choices.</p>
+                    <a href="#" class="text-sm font-semibold underline" style="color: var(--color-rose);">Read Post &raquo;</a>
+                </div>
+
+                 <!-- Digital Work 1: Infographic -->
+                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4" style="border-color: var(--color-sage);">
+                    <p class="text-sm font-light text-gray-500 mb-2">Digital Work | October 15, 2025</p>
+                    <h3 class="header-text text-2xl mb-3" style="color: var(--color-text);">UX Infographic: 5 Principles of Fluid Design</h3>
+                    <p class="text-gray-700 mb-4">A visual guide created in Adobe Illustrator, outlining best practices for responsive layouts and minimizing Cumulative Layout Shift (CLS) in web design.</p>
+                    <a href="https://placehold.co/1200x800/D9A8A5/FFF?text=Infographic+Mockup" class="text-sm font-semibold underline" style="color: var(--color-rose);">View Infographic &raquo;</a>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4" style="border-color: var(--color-sage);">
+                    <p class="text-sm font-light text-gray-500 mb-2">Editorial | September 18, 2025</p>
+                    <h3 class="header-text text-2xl mb-3" style="color: var(--color-text);">Why Every Content Creator Needs a Consistent Podcast ID</h3>
+                    <p class="text-gray-700 mb-4">A technical deep dive into metadata, RSS feeds, and visual branding for long-term podcast growth and discoverability.</p>
+                    <a href="#" class="text-sm font-semibold underline" style="color: var(--color-rose);">Read Post &raquo;</a>
+                </div>
+
+                 <!-- Digital Work 2: Magazine Layout Mockup -->
+                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4" style="border-color: var(--color-sage);">
+                    <p class="text-sm font-light text-gray-500 mb-2">Digital Work | August 3, 2025</p>
+                    <h3 class="header-text text-2xl mb-3" style="color: var(--color-text);">Print Layout Mockup: "Sustainability Today"</h3>
+                    <p class="text-gray-700 mb-4">A 4-page spread design exercise focusing on clean typography, white space, and modular grids for optimal print legibility and visual flow.</p>
+                    <a href="https://placehold.co/1200x800/A3B5A1/FFF?text=Print+Layout+Mockup" class="text-sm font-semibold underline" style="color: var(--color-rose);">View Mockup &raquo;</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Floral/Earthy Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Link back to Portfolio -->
+        <section class="text-center">
+            <a href="portfolio.html" class="btn-primary text-lg">View Portfolio Projects &raquo;</a>
+        </section>
+
+    </main>
+
+    <!-- Footer / Contact Section (Must be in ALL four files) -->
+    <footer class="py-12 mt-20" style="background-color: var(--color-linen);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm" style="color: var(--color-text);">
+            
+            <!-- Contact Info Column -->
+            <div>
+                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Connect</h4>
+                <p class="font-medium">Caitlin Willson</p>
+                <p>126 Willowbrook, Ct</p>
+                <p>Kingsport, TN 37660</p>
+                <p>Phone: (423) 863-8089</p>
+                <p>Email: <a href="mailto:caitlinwillson@gmail.com" class="underline hover:text-gray-900">caitlinwillson@gmail.com</a></p>
+            </div>
+
+            <!-- Navigation Links Column -->
+            <div>
+                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Navigation</h4>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="about.html" class="hover:underline">About Me</a></li>
+                    <li><a href="portfolio.html" class="hover:underline">Portfolio</a></li>
+                    <li><a href="blog.html" class="hover:underline">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Sign Up Column -->
+            <div>
+                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Stay Updated</h4>
+                <p class="mb-3">Sign up for my (fake) newsletter for the latest projects and insights!</p>
+                <form onsubmit="alert('Thank you for signing up for Caitlin’s newsletter! (This is a fake sign up form for the project)'); return false;">
+                    <input type="email" placeholder="Your Email Address" required class="w-full p-2 mb-3 rounded-md border" style="border-color: var(--color-rose); background-color: var(--color-cream); color: var(--color-text);">
+                    <button type="submit" class="btn-primary w-full text-base">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p class="text-xs" style="color: var(--color-text); font-family: var(--font-serif);">&copy; 2025 Caitlin Willson Portfolio. All Rights Reserved. | Final Academic Project</p>
+        </div>
+    </footer>
+
+</body>
+</html>
