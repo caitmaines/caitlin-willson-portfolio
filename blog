@@ -66,9 +66,66 @@
         .btn-primary:hover {
             background-color: #7D907A; 
         }
+
+        .blog-post {
+            border-left: 5px solid var(--color-rose);
+        }
+
+        /* Custom styles for the Read More functionality */
+        .content-wrapper {
+            max-height: 120px; /* Visible teaser height */
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .content-wrapper.expanded {
+            max-height: 5000px; /* Sufficiently large height to show all content */
+        }
+
+        /* Fade effect for the unexpanded card */
+        .content-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px; /* Height of the gradient fade */
+            pointer-events: none;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color-cream) 80%);
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .content-wrapper.expanded::after {
+            opacity: 0;
+        }
+
+        /* Ensure the content text is above the fade */
+        .post-content p, .post-content ul {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
+
+    <!-- JavaScript to handle the Read More toggle -->
+    <script>
+        function toggleReadMore(button) {
+            const contentWrapper = button.previousElementSibling;
+            
+            if (contentWrapper.classList.contains('expanded')) {
+                // Collapse the content
+                contentWrapper.classList.remove('expanded');
+                button.textContent = 'Read More »';
+            } else {
+                // Expand the content
+                contentWrapper.classList.add('expanded');
+                button.textContent = 'Collapse «';
+            }
+        }
+    </script>
 
     <!-- Navigation Bar (Consistent across all pages) -->
     <nav class="sticky top-0 z-50 bg-white/95 shadow-md backdrop-blur-sm">
@@ -88,46 +145,105 @@
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
 
         <!-- BLOG SECTION -->
         <section id="blog">
-            <h2 class="header-text text-4xl md:text-5xl text-center mb-16" style="color: var(--color-rose);">
-                Latest Insights & Digital Work
+            <h2 class="header-text text-4xl md:text-5xl text-center mb-16" style="color: var(--color-sage);">
+                Latest Insights
             </h2>
-             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Blog Post 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4" style="border-color: var(--color-sage);">
-                    <p class="text-sm font-light text-gray-500 mb-2">Editorial | October 29, 2025</p>
-                    <h3 class="header-text text-2xl mb-3" style="color: var(--color-text);">The Subtle Power of Muted Palettes in Branding</h3>
-                    <p class="text-gray-700 mb-4">An exploration of how soft, earthy colors communicate stability and luxury, moving away from high saturation trends. This ties directly into our portfolio's aesthetic choices.</p>
-                    <a href="#" class="text-sm font-semibold underline" style="color: var(--color-rose);">Read Post &raquo;</a>
-                </div>
+            
+            <div class="space-y-16">
 
-                 <!-- Digital Work 1: Infographic -->
-                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4" style="border-color: var(--color-sage);">
-                    <p class="text-sm font-light text-gray-500 mb-2">Digital Work | October 15, 2025</p>
-                    <h3 class="header-text text-2xl mb-3" style="color: var(--color-text);">UX Infographic: 5 Principles of Fluid Design</h3>
-                    <p class="text-gray-700 mb-4">A visual guide created in Adobe Illustrator, outlining best practices for responsive layouts and minimizing Cumulative Layout Shift (CLS) in web design.</p>
-                    <a href="https://placehold.co/1200x800/D9A8A5/FFF?text=Infographic+Mockup" class="text-sm font-semibold underline" style="color: var(--color-rose);">View Infographic &raquo;</a>
-                </div>
+                <!-- POST 1: The Magic of the Perpetual Project -->
+                <article class="blog-post p-6 bg-white rounded-xl shadow-lg">
+                    <h3 class="header-text text-3xl mb-4" style="color: var(--color-text);">The Magic of the Perpetual Project</h3>
+                    <p class="text-sm font-light text-gray-500 mb-6">Posted: November 25, 2025 | Category: Creativity & Craft</p>
+                    
+                    <div class="content-wrapper">
+                        <div class="post-content">
+                            <p class="mb-4 text-gray-700">You know exactly how it goes, you finish one yarn masterpiece, maybe it was a giant blanket, maybe a fiddly shawl, and you swear up and down that you are going to take a substantial break. Your hook is resting peacefully, your stash is slightly depleted, though never truly small or insignificant, and you feel that deeply satisfying thump of a complex project finally being completed.</p>
+                            
+                            <p class="mb-4 text-gray-700">And then, almost predictably, about 48 hours later, you are staring intently at a single skein of high quality merino wool and thinking, "That would make a really cute and fast hat, I could probably knock that out this afternoon."</p>
+                            
+                            <p class="mb-4 text-gray-700">That, right there, is the profound beauty of the Perpetual Project. It's not just the list of specific items you are currently working on, or the list of things you plan to start, but rather the constant, essential feeling of having a project continuously in progress. It is the subtle, comforting, gentle hum of creativity that never truly turns off. It is the assurance that there is always something tactile waiting for your hands.</p>
+                            
+                            <p class="mb-4 text-gray-700">The key to keeping this crafting magic alive isn't necessarily finishing every single piece you start in a quick or timely manner, but rather, it is in embracing the necessary rotation of tasks and textures. Never feel the need to feel guilty about that complex lace scarf that has been sitting untouched in a specific basket since the start of spring. It is simply aging, it is marinating, it is waiting patiently for its true, perfect moment of focus.</p>
+                            
+                            <p class="mb-4 text-gray-700">This rotation is a necessity for mental variety. My current working rotation, for instance, reliably involves these distinct categories:</p>
+                            
+                            <ul class="list-disc ml-6 space-y-2 text-gray-700 p-3 bg-gray-50 rounded-md mb-4" style="border-left: 3px solid var(--color-sage);">
+                                <li>A super fine lace doily or thread work, which demands total focus and precise stitch counts, this is my meditation project.</li>
+                                <li>A chunky throw blanket or simple granny square repeat, perfect for mindless TV time or long phone calls, this is the reliable comfort project.</li>
+                                <li>A small, fast amigurumi or dishcloth that I can actually start and finish in a single day or weekend, this provides the critical immediate gratification project.</li>
+                            </ul>
+                            
+                            <p class="mb-4 text-gray-700">It is absolutely all about having options, having different textures for different moods. It is about actively not letting the external pressure of The Finish Line override the deep, internal joy of The Process Itself. Keep your hands busy, keep the creative flow constantly moving forward, and never, ever apologize for having three different bags of yarn sitting strategically on the floor at any given time, it means you are prepared.</p>
+                            
+                            <p class="text-gray-700 italic">Happy hooking, and happy rotating.</p>
+                        </div>
+                    </div>
+                    <!-- Read More Button -->
+                    <button onclick="toggleReadMore(this)" class="mt-4 text-sm font-semibold underline" style="color: var(--color-rose);">
+                        Read More &raquo;
+                    </button>
+                </article>
 
-                <!-- Blog Post 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4" style="border-color: var(--color-sage);">
-                    <p class="text-sm font-light text-gray-500 mb-2">Editorial | September 18, 2025</p>
-                    <h3 class="header-text text-2xl mb-3" style="color: var(--color-text);">Why Every Content Creator Needs a Consistent Podcast ID</h3>
-                    <p class="text-gray-700 mb-4">A technical deep dive into metadata, RSS feeds, and visual branding for long-term podcast growth and discoverability.</p>
-                    <a href="#" class="text-sm font-semibold underline" style="color: var(--color-rose);">Read Post &raquo;</a>
-                </div>
+                <!-- POST 2: Preserving the Season, Why Canning is a Must-Do -->
+                <article class="blog-post p-6 bg-white rounded-xl shadow-lg">
+                    <h3 class="header-text text-3xl mb-4" style="color: var(--color-text);">Preserving the Season, Why Canning is a Must-Do</h3>
+                    <p class="text-sm font-light text-gray-500 mb-6">Posted: October 10, 2025 | Category: Self-Reliance & Homesteadiing</p>
+                    
+                    <div class="content-wrapper">
+                        <div class="post-content">
+                            <p class="mb-4 text-gray-700">If you are anything like me, you get a little bit obsessive, in the best way possible, when the local produce hits its specific, beautiful peak. Those perfect, sun-ripened summer strawberries, that absurdly generous bumper crop of garden tomatoes, it truly feels like a cosmic injustice to allow a single perfect, flawless piece to go to waste or simply rot on the vine.</p>
+                            
+                            <p class="mb-4 text-gray-700">That is precisely where the meditative, deeply fulfilling, and utterly necessary art of canning at home makes its powerful entrance.</p>
+                            
+                            <p class="mb-4 text-gray-700">Canning is so much more than just a quaint, old-fashioned skill that your grandmother might have had. It is a powerful method of taking back control over exactly what you and your family eat, and a proven way to extend the beautiful, fleeting perfection of a given season. You open a jar of your homemade salsa or pickled peaches in the dead of cold December, and suddenly, vividly, you are transported back to August, sweating a little in the heat, and tasting the pure, concentrated sunshine. That intense connection is absolutely worth every bit of effort.</p>
+                            
+                            <p class="mb-4 text-gray-700">Honestly, and this is the biggest hurdle, the hardest part of the entire operation is simply getting started with that very first batch. Once you have successfully done a batch of simple water bath canning for something naturally high-acid, like pickles, jam, or tomato sauce, the entire precise process clicks into place and becomes a natural rhythm. It quickly becomes a satisfying, repeatable sequence, prep, simmer, fill the hot jars, seal them tightly, and then wait for that glorious, confirming pop that tells you you’ve done the chemistry right.</p>
+                            
+                            <p class="mb-4 text-gray-700">And the truly massive payoff, a pantry systematically stocked with your own custom-made, high-quality goodness. There are no weird stabilizers, no unnecessary preservatives, no excess sugar, unless you specifically want it, just pure, concentrated, high-impact flavor. It is the ultimate operationalization of your own food supply and reserves, which is a significant, quiet win in my personal book. Furthermore, the knowledge that you have done it all yourself provides a sense of self-reliance that simply cannot be bought at a supermarket.</p>
+                            
+                            <p class="text-gray-700">Get the basic, essential equipment, find a reliable high-acid recipe that you absolutely love, and give it a serious shot. Set up the system. Your future, well-fed self will truly thank you when the cold depths of winter finally hit.</p>
+                        </div>
+                    </div>
+                    <!-- Read More Button -->
+                    <button onclick="toggleReadMore(this)" class="mt-4 text-sm font-semibold underline" style="color: var(--color-rose);">
+                        Read More &raquo;
+                    </button>
+                </article>
 
-                 <!-- Digital Work 2: Magazine Layout Mockup -->
-                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4" style="border-color: var(--color-sage);">
-                    <p class="text-sm font-light text-gray-500 mb-2">Digital Work | August 3, 2025</p>
-                    <h3 class="header-text text-2xl mb-3" style="color: var(--color-text);">Print Layout Mockup: "Sustainability Today"</h3>
-                    <p class="text-gray-700 mb-4">A 4-page spread design exercise focusing on clean typography, white space, and modular grids for optimal print legibility and visual flow.</p>
-                    <a href="https://placehold.co/1200x800/A3B5A1/FFF?text=Print+Layout+Mockup" class="text-sm font-semibold underline" style="color: var(--color-rose);">View Mockup &raquo;</a>
-                </div>
+                <!-- POST 3: Operationalizing Self, Setting Your Own Foundation First -->
+                <article class="blog-post p-6 bg-white rounded-xl shadow-lg">
+                    <h3 class="header-text text-3xl mb-4" style="color: var(--color-text);">Operationalizing Self, Setting Your Own Foundation First</h3>
+                    <p class="text-sm font-light text-gray-500 mb-6">Posted: September 5, 2025 | Category: Strategy & Leadership</p>
+                    
+                    <div class="content-wrapper">
+                        <div class="post-content">
+                            <p class="mb-4 text-gray-700">I have been thinking a tremendous amount lately about how we prioritize our internal work and maintenance versus our demanding external responsibilities. Everyone, in every field, is currently talking intensely about operationalizing teams, optimizing complex workflows, and streamlining technical systems. But the simple, crucial question remains, how many of us have truly and completely operationalized ourselves?</p>
+                            
+                            <p class="mb-4 text-gray-700">It is a foundational, absolutely prerequisite concept that gets constantly missed or deferred. We try with good intentions to implement incredibly complex strategies for others, we coach, we guide, we instruct, we lead, all while operating entirely on a wobbly, maybe even cracked, personal and internal foundation.</p>
+                            
+                            <p class="mb-4 text-gray-700">This discussion is not about self-care in the typical, fluffy, spa-day sense of the word, far from it, this is about the serious, necessary work of hard-wiring your essential habits, clarifying your boundaries, and setting up your rapid decision-making processes. It means conducting an audit and forcing yourself to define these internal operational specs:</p>
+                            
+                            <ul class="list-disc ml-6 space-y-2 text-gray-700 p-3 bg-gray-50 rounded-md mb-4" style="border-left: 3px solid var(--color-sage);">
+                                <li>Defining your non-negotiables, What is the minimal viable baseline for your sleep, your physical health, your mental focus, and your necessary alone time?</li>
+                                <li>Structuring your energy input and output, When are your verifiable peak performance times for deep work, and are you actively protecting those periods from low-value interruptions?</li>
+                                <li>Clarifying your own specific workflow, Do you have a consistent, repeatable system for handling internal and external information intake and output, or are you just perpetually reacting to everything that lands in front of you?</li>
+                            </ul>
+
+                            <p class="mb-4 text-gray-700">The unavoidable truth is this, you have to operationalize yourself before you can ever hope to effectively operationalize others. It is not only unfair, but structurally unsound to demand clarity, consistency, and structure from a team or group when your own personal operating system is constantly running on chaos, reactivity, and pure adrenaline. The instability will always seep out.</p>
+                            
+                            <p class="mb-4 text-gray-700">My major takeaway lately, the internal mandate, has been that these personal setup notes, the strategic internal strategy deck, absolutely must come first. They don’t just happen passively alongside the external, client-facing work, they must actively precede it and provide the stable base. It is the critical prerequisite for effective leadership, for clear communication, and honestly, for a sane, sustainable life. Get your own personal house in strategic, operational order, and the rest, the complex external world, becomes infinitely easier, and more reliable, to manage.</p>
+                        </div>
+                    </div>
+                    <!-- Read More Button -->
+                    <button onclick="toggleReadMore(this)" class="mt-4 text-sm font-semibold underline" style="color: var(--color-rose);">
+                        Read More &raquo;
+                    </button>
+                </article>
 
             </div>
         </section>
@@ -150,7 +266,7 @@
             <div>
                 <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Connect</h4>
                 <p class="font-medium">Caitlin Willson</p>
-                <p>126 Willowbrook, Ct</p>
+                <p>126 Willowbrook Ct</p>
                 <p>Kingsport, TN 37660</p>
                 <p>Phone: (423) 863-8089</p>
                 <p>Email: <a href="mailto:caitlinwillson@gmail.com" class="underline hover:text-gray-900">caitlinwillson@gmail.com</a></p>
