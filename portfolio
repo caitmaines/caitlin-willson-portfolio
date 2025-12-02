@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caitlin Willson | Portfolio Projects</title>
+    <title>Caitlin Willson | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
@@ -54,7 +54,7 @@
             z-index: 10;
         }
 
-        /* Card styles for portfolio projects */
+        /* Card styles for portfolio */
         .portfolio-card {
             transition: all 0.3s ease;
             box-shadow: 5px 5px 15px rgba(163, 181, 161, 0.2); /* Soft sage shadow */
@@ -93,9 +93,9 @@
                 </div>
                 <!-- Desktop Menu -->
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="about.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">About Me & Resume</a>
-                    <a href="portfolio.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Portfolio Projects</a>
-                    <a href="blog.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Blog & Digital Work</a>
+                    <a href="about.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">About Me</a>
+                    <a href="portfolio.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Portfolio</a>
+                    <a href="blog.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Blog</a>
                 </div>
             </div>
         </div>
@@ -180,9 +180,9 @@
                 <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Navigation</h4>
                 <ul class="space-y-1">
                     <li><a href="index.html" class="hover:underline">Home</a></li>
-                    <li><a href="about.html" class="hover:underline">About Me & Resume</a></li>
-                    <li><a href="portfolio.html" class="hover:underline">Portfolio Projects</a></li>
-                    <li><a href="blog.html" class="hover:underline">Blog & Digital Work</a></li>
+                    <li><a href="about.html" class="hover:underline">About Me</a></li>
+                    <li><a href="portfolio.html" class="hover:underline">Portfolio</a></li>
+                    <li><a href="blog.html" class="hover:underline">Blog</a></li>
                 </ul>
             </div>
 
