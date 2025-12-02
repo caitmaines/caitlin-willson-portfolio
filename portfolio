@@ -54,7 +54,7 @@
             z-index: 10;
         }
 
-        /* Card styles for portfolio */
+        /* Card styles for portfolio projects */
         .portfolio-card {
             transition: all 0.3s ease;
             box-shadow: 5px 5px 15px rgba(163, 181, 161, 0.2); /* Soft sage shadow */
@@ -114,36 +114,48 @@
                 <!-- Project 1: Video Production (Crochet) -->
                 <div class="portfolio-card bg-white p-6">
                     <h3 class="header-text text-2xl mb-2" style="color: var(--color-text);">Video Production: Crochet Tutorial</h3>
-                    <p class="text-sm text-gray-600 mb-4">Educational Content & Adobe Premiere Pro Coursework</p>
+                    <p class="text-sm text-gray-600 mb-4">Educational Content & Technical Proficiency</p>
                     <div class="aspect-video bg-gray-200 flex items-center justify-center rounded-lg mb-4 overflow-hidden">
-                        <!-- Example Video Embed Placeholder - Replace with actual YouTube embed -->
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="Crochet Tutorial Placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- ACTUAL YOUTUBE EMBED -->
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/35UWBK7O2lM?si=EGaLRqq_rfQVYVnG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                    <p class="text-gray-700 mb-4">**Project Focus:** Half Double Crochet Washcloth. This video project was created to demonstrate proficiency in Adobe Premiere Pro editing, YouTube optimization, and clear, step-by-step instructional design.</p>
-                    <a href="https://www.youtube.com" target="_blank" class="text-sm font-semibold underline" style="color: var(--color-sage);">Watch on YouTube &raquo;</a>
+                    
+                    <p class="text-sm font-medium text-gray-800 mb-2">Project Focus: Half Double Crochet Washcloth</p>
+                    <p class="text-gray-700 mb-4">This project demonstrates proficiency in video editing, YouTube content structuring, and clear, step-by-step instructional design.</p>
+                    <p class="text-xs font-semibold text-gray-500 mb-4">Software Used: Adobe Premiere Pro</p>
+
+                    <a href="https://www.youtube.com/embed/35UWBK7O2lM" target="_blank" class="text-sm font-semibold underline" style="color: var(--color-sage);">Watch on YouTube &raquo;</a>
                 </div>
                 
                 <!-- Project 2: Podcast -->
                 <div class="portfolio-card bg-white p-6">
                     <h3 class="header-text text-2xl mb-2" style="color: var(--color-text);">Podcast: "Parts Per Million"</h3>
-                    <p class="text-sm text-gray-600 mb-4">Audio Production & Storytelling | Focus: Shared Human Experience</p>
+                    <p class="text-sm text-gray-600 mb-4">Audio Production & Narrative Storytelling</p>
                     <div class="aspect-square bg-gray-200 flex items-center justify-center rounded-lg mb-4">
                         <!-- Placeholder for Embedded Podcast Player -->
                         <span class="text-gray-500 text-center p-4">Podcast Player Embed Placeholder</span>
                     </div>
-                    <p class="text-gray-700 mb-4">**Feature Episode:** *Homesteading with Glendora Maines*. Explores how diverse individual lived experiences contribute to the complexity and richness of the global community, fostering mutual understanding.</p>
+                    
+                    <p class="text-sm font-medium text-gray-800 mb-2">Feature Episode: Homesteading with Glendora Maines</p>
+                    <p class="text-gray-700 mb-4">Focuses on how diverse individual lived experiences contribute to the complexity and richness of the global community, fostering mutual understanding.</p>
+                    <p class="text-xs font-semibold text-gray-500 mb-4">Software Used: Adobe Audition</p>
+
                     <a href="#" class="text-sm font-semibold underline" style="color: var(--color-sage);">Listen to the Episode &raquo;</a>
                 </div>
 
                 <!-- Project 3: Magazine/Editorial -->
                 <div class="portfolio-card bg-white p-6">
                     <h3 class="header-text text-2xl mb-2" style="color: var(--color-text);">Magazine: "The Operationalist"</h3>
-                    <p class="text-sm text-gray-600 mb-4">Editorial Feature & Professional Insight | Role: Writer/Editor</p>
+                    <p class="text-sm text-gray-600 mb-4">Editorial Feature & Professional Insight</p>
                     <div class="h-48 bg-gray-200 flex items-center justify-center rounded-lg mb-4">
                         <!-- Placeholder for Magazine Mockup -->
                         <span class="text-gray-500 text-center p-4">Magazine Layout Mockup</span>
                     </div>
-                    <p class="text-gray-700 mb-4">An in-depth article featuring the essential transition of the Executive Assistant role into the more strategic **Executive Operations Strategist** in an AI-driven workplace.</p>
+                    
+                    <p class="text-sm font-medium text-gray-800 mb-2">Article Focus: Executive Operations Strategist Transition</p>
+                    <p class="text-gray-700 mb-4">An in-depth article featuring the essential transition of the Executive Assistant role into the more strategic Executive Operations Strategist in an AI-driven workplace.</p>
+                    <p class="text-xs font-semibold text-gray-500 mb-4">Software Used: Adobe InDesign</p>
+                    
                     <a href="#" class="text-sm font-semibold underline" style="color: var(--color-sage);">Read The Operationalist &raquo;</a>
                 </div>
             </div>
@@ -154,8 +166,8 @@
 
         <!-- Link to Blog -->
         <section class="text-center">
-            <h2 class="header-text text-3xl mb-6" style="color: var(--color-sage);">See More Digital Work</h2>
-            <p class="text-lg mb-8">Visit the Blog & Digital Works page for infographics, print layouts, and thought leadership.</p>
+            <h2 class="header-text text-3xl mb-6" style="color: var(--color-sage);">Visit My Blog</h2>
+            <p class="text-lg mb-8">Read my latest insights on creativity, self-reliance, and operational strategy.</p>
             <a href="blog.html" class="btn-primary text-lg">Go to Blog &raquo;</a>
         </section>
 
@@ -169,7 +181,7 @@
             <div>
                 <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Connect</h4>
                 <p class="font-medium">Caitlin Willson</p>
-                <p>126 Willowbrook, Ct</p>
+                <p>126 Willowbrook Ct</p>
                 <p>Kingsport, TN 37660</p>
                 <p>Phone: (423) 863-8089</p>
                 <p>Email: <a href="mailto:caitlinwillson@gmail.com" class="underline hover:text-gray-900">caitlinwillson@gmail.com</a></p>
