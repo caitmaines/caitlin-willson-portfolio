@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caitlin Willson | About Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* * 🎨 Custom Aesthetic Styling (Repeated for multi-page consistency) */
+        
+        :root {
+            --color-cream: #FFFBF5; 
+            --color-linen: #EFEBE5; 
+            --color-sage: #A3B5A1; 
+            --color-rose: #D9A8A5; 
+            --color-text: #3E383A;  
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-cream);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            scroll-behavior: smooth;
+        }
+
+        .header-text {
+            font-family: var(--font-serif);
+            font-weight: 600;
+        }
+
+        .section-divider {
+            position: relative;
+            height: 1px;
+            background-color: var(--color-linen);
+            margin: 4rem 0;
+            overflow: visible;
+        }
+
+        .section-divider::before {
+            content: '•';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--color-sage);
+            font-size: 2.5rem;
+            line-height: 0;
+            padding: 0 1rem;
+            background-color: var(--color-cream);
+            z-index: 10;
+        }
+
+        .btn-primary {
+            background-color: var(--color-sage);
+            color: var(--color-cream);
+            font-weight: 500;
+            transition: background-color 0.2s;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #7D907A; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar (Consistent across all pages) -->
+    <nav class="sticky top-0 z-50 bg-white/95 shadow-md backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="header-text text-2xl" style="color: var(--color-text);">Caitlin Willson | Portfolio</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="about.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">About Me</a>
+                    <a href="portfolio.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Portfolio</a>
+                    <a href="blog.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+
+        <!-- ABOUT ME SECTION: PROFESSIONAL BIO -->
+        <section id="about" class="mb-20">
+            <h2 class="header-text text-4xl md:text-5xl text-center mb-16" style="color: var(--color-sage);">
+                About Caitlin: The Editor & Strategist
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                
+                <!-- Left Column: Image -->
+                <div class="md:col-span-1 rounded-lg overflow-hidden shadow-xl">
+                    <img 
+                        src="https://placehold.co/800x1200/A3B5A1/FFF?text=Caitlin+Willson+Profile" 
+                        alt="Professional Headshot Placeholder" 
+                        class="w-full h-auto object-cover rounded-lg"
+                        onerror="this.onerror=null;this.src='https://placehold.co/800x1200/D9A8A5/FFF?text=Caitlin+Profile';"
+                    >
+                </div>
+
+                <!-- Right Columns: Bio and Skills -->
+                <div class="md:col-span-2 space-y-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4" style="border-color: var(--color-rose);">
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            I specialize in bridging creative vision with corporate objectives. My background in editorial work (magazine & blog) combined with technical execution (video & digital marketing) allows me to develop holistic content strategies that resonate with modern audiences while maintaining a high level of academic integrity and professional polish.
+                        </p>
+                    </div>
+
+                    <h3 class="header-text text-3xl mt-12" style="color: var(--color-text);">Key Skills</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="px-3 py-1 bg-white rounded-full text-sm font-medium" style="color: var(--color-sage); border: 1px solid var(--color-sage);">Video Production</span>
+                        <span class="px-3 py-1 bg-white rounded-full text-sm font-medium" style="color: var(--color-sage); border: 1px solid var(--color-sage);">SEO/Digital Strategy</span>
+                        <span class="px-3 py-1 bg-white rounded-full text-sm font-medium" style="color: var(--color-sage); border: 1px solid var(--color-sage);">Long-Form Editorial</span>
+                        <span class="px-3 py-1 bg-white rounded-full text-sm font-medium" style="color: var(--color-sage); border: 1px solid var(--color-sage);">Podcast Editing</span>
+                        <span class="px-3 py-1 bg-white rounded-full text-sm font-medium" style="color: var(--color-sage); border: 1px solid var(--color-sage);">UI/UX Copywriting</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floral/Earthy Divider -->
+        <div class="section-divider"></div>
+
+        <!-- RESUME/EXPERIENCE DETAIL SECTION -->
+        <section id="resume">
+            <h2 class="header-text text-4xl md:text-5xl text-center mb-16" style="color: var(--color-rose);">
+                Resume Highlights
+            </h2>
+
+            <div class="max-w-4xl mx-auto space-y-12">
+
+                <!-- Job Entry 1 -->
+                <div class="border-l-4 p-4 pl-6 relative" style="border-color: var(--color-rose);">
+                    <h3 class="header-text text-2xl mb-1" style="color: var(--color-text);">Content Lead</h3>
+                    <p class="text-lg font-medium" style="color: var(--color-rose);">Acme Digital Solutions</p>
+                    <p class="text-sm text-gray-500 mb-4">2023 – Present</p>
+                    <ul class="list-disc ml-6 space-y-2 text-gray-700">
+                        <li>Managed content lifecycle from ideation to deployment, overseeing 50+ assets monthly.</li>
+                        <li>Implemented a new tagging system that increased organic search visibility by 22% in six months.</li>
+                        <li>Mentored a team of junior writers and digital artists.</li>
+                    </ul>
+                </div>
+
+                <!-- Job Entry 2 -->
+                <div class="border-l-4 p-4 pl-6 relative" style="border-color: var(--color-rose);">
+                    <h3 class="header-text text-2xl mb-1" style="color: var(--color-text);">Associate Editor</h3>
+                    <p class="text-lg font-medium" style="color: var(--color-rose);">University Press Magazine</p>
+                    <p class="text-sm text-gray-500 mb-4">2021 – 2023</p>
+                    <ul class="list-disc ml-6 space-y-2 text-gray-700">
+                        <li>Directed editorial calendar and fact-checked all academic articles prior to publication.</li>
+                        <li>Designed initial wireframes for the online archive, improving user navigation.</li>
+                    </ul>
+                </div>
+                
+                <!-- Education -->
+                 <div class="border-l-4 p-4 pl-6 relative" style="border-color: var(--color-rose);">
+                    <h3 class="header-text text-2xl mb-1" style="color: var(--color-text);">M.A. Communications</h3>
+                    <p class="text-lg font-medium" style="color: var(--color-rose);">State University, Honors Program</p>
+                    <p class="text-sm text-gray-500 mb-4">2019 – 2021</p>
+                </div>
+            </div>
+             <div class="text-center mt-16">
+                <a href="https://placehold.co/1200x800/A3B5A1/FFF?text=Downloadable+Resume+PDF" class="btn-primary text-lg" target="_blank" rel="noopener noreferrer">Download Full Resume (PDF)</a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer / Contact Section (Must be in ALL four files) -->
+    <footer class="py-12 mt-20" style="background-color: var(--color-linen);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm" style="color: var(--color-text);">
+            
+            <!-- Contact Info Column -->
+            <div>
+                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Connect</h4>
+                <p class="font-medium">Caitlin Willson</p>
+                <p>126 Willowbrook, Ct</p>
+                <p>Kingsport, TN 37660</p>
+                <p>Phone: (423) 863-8089</p>
+                <p>Email: <a href="mailto:caitlinwillson@gmail.com" class="underline hover:text-gray-900">caitlinwillson@gmail.com</a></p>
+            </div>
+
+            <!-- Navigation Links Column -->
+            <div>
+                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Navigation</h4>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="about.html" class="hover:underline">About Me</a></li>
+                    <li><a href="portfolio.html" class="hover:underline">Portfolio Projects</a></li>
+                    <li><a href="blog.html" class="hover:underline">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Sign Up Column -->
+            <div>
+                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Stay Updated</h4>
+                <p class="mb-3">Sign up for my (fake) newsletter for the latest projects and insights!</p>
+                <form onsubmit="alert('Thank you for signing up for Caitlin’s newsletter! (This is a fake sign up form for the project)'); return false;">
+                    <input type="email" placeholder="Your Email Address" required class="w-full p-2 mb-3 rounded-md border" style="border-color: var(--color-rose); background-color: var(--color-cream); color: var(--color-text);">
+                    <button type="submit" class="btn-primary w-full text-base">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p class="text-xs" style="color: var(--color-text); font-family: var(--font-serif);">&copy; 2025 Caitlin Willson Portfolio. All Rights Reserved. | Final Academic Project</p>
+        </div>
+    </footer>
+
+</body>
+</html>
