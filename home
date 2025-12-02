@@ -65,6 +65,21 @@
             box-shadow: 5px 5px 15px rgba(163, 181, 161, 0.2); /* Soft sage shadow */
             border-bottom: 4px solid var(--color-rose); /* Pastel rose accent line */
             border-radius: 0.5rem;
+            flex-shrink: 0; /* Important for horizontal scrolling */
+            width: 90%; /* Default mobile width */
+            margin-right: 1.5rem; /* Spacing between cards */
+        }
+        
+        @media (min-width: 640px) {
+            .portfolio-card {
+                width: calc(50% - 1rem); /* Tablet width */
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .portfolio-card {
+                width: calc(33.333% - 1.5rem); /* Desktop width */
+            }
         }
 
         .portfolio-card:hover {
@@ -84,9 +99,74 @@
         .btn-primary:hover {
             background-color: #7D907A; /* Darker sage for hover */
         }
+
+        /* Carousel Styles */
+        .carousel-container {
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            padding-left: 1rem; /* Padding to show half of the next card */
+            padding-right: 1rem;
+        }
+
+        .carousel-item {
+            scroll-snap-align: start; /* Snap to the start of the item */
+        }
+        
+        /* Hide scrollbar visually */
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
     </style>
 </head>
 <body>
+
+    <!-- JavaScript for the Scrolling Carousel -->
+    <script>
+        // Function to scroll the carousel left or right
+        function scrollCarousel(direction) {
+            const container = document.getElementById('feature-carousel');
+            // Calculate scroll amount based on the width of a single card plus spacing (approx 100% of the item width)
+            // For a smoother scroll that shows the next item
+            const itemWidth = container.querySelector('.portfolio-card').offsetWidth;
+            
+            if (direction === 'left') {
+                container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            }
+        }
+
+        // Function to simulate getting the current date minus one month for the headline
+        function getPreviousMonth() {
+            const date = new Date();
+            // Get the current month number (0-11)
+            let month = date.getMonth(); 
+            // Calculate the target month number (one month prior, wrapping around the year)
+            let targetMonth = (month === 0) ? 11 : month - 1;
+            
+            // Set the date object to the target month for formatting
+            date.setMonth(targetMonth);
+
+            // Set the year based on the target month
+            let year = date.getFullYear();
+            if (month === 0) {
+                // If current month is January (0), target is December (11) of the previous year
+                year--; 
+            }
+
+            return date.toLocaleString('default', { month: 'long' }) + ' ' + year;
+        }
+        
+        // Run this function immediately when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+             document.getElementById('carousel-month').textContent = getPreviousMonth();
+        });
+    </script>
 
     <!-- Navigation Bar (Consistent across all pages) -->
     <nav class="sticky top-0 z-50 bg-white/95 shadow-md backdrop-blur-sm">
@@ -108,70 +188,69 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- 1. HOME SECTION: ELEGANT INTRODUCTION -->
-        <section id="home" class="py-24 md:py-32 flex flex-col items-center justify-center text-center min-h-screen-75">
-            <h1 class="header-text text-5xl md:text-7xl mb-6" style="color: var(--color-rose);">
+        <!-- 1. HOME SECTION: ELEGANT INTRODUCTION & IMAGE -->
+        <section id="home" class="py-16 md:py-24 flex flex-col items-center justify-center text-center">
+            <h1 class="header-text text-5xl md:text-7xl mb-4" style="color: var(--color-rose);">
                 <span style="color: var(--color-sage);">Creativity</span> & Strategy.
             </h1>
-            <p class="text-2xl font-light max-w-3xl mb-12" style="color: var(--color-text); font-family: var(--font-serif);">
-                A holistic showcase of digital content execution, editorial strategy, and operational insight, driven by a blend of technical skill and creative passion.
+            <p class="text-2xl font-light max-w-3xl mb-8" style="color: var(--color-text); font-family: var(--font-serif);">
+                A holistic approach to content, operations, and technical execution.
             </p>
+            
+            <!-- Personal Image -->
+            <div class="w-full max-w-xl mb-12 rounded-xl overflow-hidden shadow-2xl" style="box-shadow: 0 10px 25px rgba(217, 168, 165, 0.5);">
+                 <img 
+                    src="https://placehold.co/1200x500/EFEBE5/3E383A?text=Caitlin+Willson+Hero+Image+(Earthy+Pastel)" 
+                    alt="Caitlin Willson professional and creative hero image" 
+                    class="w-full h-auto object-cover"
+                    onerror="this.onerror=null;this.src='https://placehold.co/1200x500/D9A8A5/FFF?text=Strategy+Meets+Content';"
+                >
+            </div>
+            
             <a href="portfolio.html" class="btn-primary text-lg">View My Work</a>
         </section>
 
         <!-- Floral/Earthy Divider -->
         <div class="section-divider"></div>
 
-        <!-- QUICK LINKS TO OTHER PAGES -->
-        <section class="py-12 text-center">
-            <h2 class="header-text text-3xl mb-8" style="color: var(--color-text);">Quick Access</h2>
-            <div class="flex justify-center space-x-6 flex-wrap">
-                <a href="about.html" class="text-lg font-medium underline" style="color: var(--color-sage);">My Bio & Experience &raquo;</a>
-                <a href="blog.html" class="text-lg font-medium underline" style="color: var(--color-sage);">Latest Insights &raquo;</a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer / Contact Section (Must be in ALL four files) -->
-    <footer class="py-12 mt-20" style="background-color: var(--color-linen);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm" style="color: var(--color-text);">
+        <!-- 2. FEATURE CAROUSEL (DYNAMIC CONTENT SHOWCASE) -->
+        <section id="featured-work" class="py-12 md:py-16">
+            <h2 class="header-text text-3xl mb-8 text-center" style="color: var(--color-text);">
+                <span class="text-xl font-sans text-gray-500 block">Featured Work from</span> 
+                <span id="carousel-month" style="color: var(--color-rose);" class="block"></span>
+            </h2>
             
-            <!-- Contact Info Column -->
-            <div>
-                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Connect</h4>
-                <p class="font-medium">Caitlin Willson</p>
-                <p>126 Willowbrook Ct</p>
-                <p>Kingsport, TN 37660</p>
-                <p>Phone: (423) 863-8089</p>
-                <p>Email: <a href="mailto:caitlinwillson@gmail.com" class="underline hover:text-gray-900">caitlinwillson@gmail.com</a></p>
-            </div>
+            <div class="relative flex items-center -mx-4 sm:mx-0">
+                <!-- Scroll Left Button (Hidden on XS screens, visible on SM+) -->
+                <button onclick="scrollCarousel('left')" class="hidden sm:block absolute left-0 z-20 p-3 bg-white rounded-full shadow-lg hover:shadow-xl ml-2 -translate-y-1/2 top-1/2" style="color: var(--color-sage);">
+                    &lt;
+                </button>
 
-            <!-- Navigation Links Column -->
-            <div>
-                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Navigation</h4>
-                <ul class="space-y-1">
-                    <li><a href="index.html" class="hover:underline">Home</a></li>
-                    <li><a href="about.html" class="hover:underline">About Me</a></li>
-                    <li><a href="portfolio.html" class="hover:underline">Portfolio</a></li>
-                    <li><a href="blog.html" class="hover:underline">Blog</a></li>
-                </ul>
-            </div>
+                <!-- Carousel Container -->
+                <div id="feature-carousel" class="flex space-x-4 pb-4 pt-2 carousel-container w-full">
+                    
+                    <!-- Item 1: Podcast -->
+                    <div class="portfolio-card bg-white p-6 carousel-item">
+                        <h3 class="header-text text-xl mb-2" style="color: var(--color-text);">Podcast: "Parts Per Million"</h3>
+                        <p class="text-sm text-gray-600 mb-4">Audio Production (Adobe Audition)</p>
+                        <div class="h-32 bg-gray-100 flex items-center justify-center rounded-lg mb-4">
+                            <span class="text-gray-500 text-center p-4">Podcast Player Mockup</span>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">Feature Episode: Homesteading with Glendora Maines. Focuses on diverse lived experiences.</p>
+                        <a href="portfolio.html" class="text-xs font-semibold underline" style="color: var(--color-sage);">View Project Details &raquo;</a>
+                    </div>
+                    
+                    <!-- Item 2: Magazine Article -->
+                    <div class="portfolio-card bg-white p-6 carousel-item">
+                        <h3 class="header-text text-xl mb-2" style="color: var(--color-text);">Magazine: "The Operationalist"</h3>
+                        <p class="text-sm text-gray-600 mb-4">Editorial Design (Adobe InDesign)</p>
+                        <div class="h-32 bg-gray-100 flex items-center justify-center rounded-lg mb-4">
+                            <span class="text-gray-500 text-center p-4">Magazine Layout Mockup</span>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">Article on the transition of the Executive Assistant to the Strategic Operations Strategist role.</p>
+                        <a href="portfolio.html" class="text-xs font-semibold underline" style="color: var(--color-sage);">View Project Details &raquo;</a>
+                    </div>
 
-            <!-- Newsletter Sign Up Column -->
-            <div>
-                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Stay Updated</h4>
-                <p class="mb-3">Sign up for my (fake) newsletter for the latest projects and insights!</p>
-                <form onsubmit="alert('Thank you for signing up for Caitlin's newsletter! (This is a fake sign up form for the project)'); return false;">
-                    <input type="email" placeholder="Your Email Address" required class="w-full p-2 mb-3 rounded-md border" style="border-color: var(--color-rose); background-color: var(--color-cream); color: var(--color-text);">
-                    <button type="submit" class="btn-primary w-full text-base">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        <div class="text-center mt-8">
-            <p class="text-xs" style="color: var(--color-text); font-family: var(--font-serif);">&copy; 2025 Caitlin Willson Portfolio. All Rights Reserved. | Final Academic Project</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <!-- Item 3: Blog Post - Operationalizing Self -->
+                    <div class="portfolio-card bg-white p-6 carousel-item">
+                        <h3 class="header-text text-xl mb-2" style="color: var(--color-text);">Blog: Operationalizing Self</h3>
