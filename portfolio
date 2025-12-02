@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caitlin Willson | Portfolio Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* * 🎨 Custom Aesthetic Styling (Repeated for multi-page consistency) */
+        
+        :root {
+            --color-cream: #FFFBF5; 
+            --color-linen: #EFEBE5; 
+            --color-sage: #A3B5A1; 
+            --color-rose: #D9A8A5; 
+            --color-text: #3E383A;  
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-cream);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            scroll-behavior: smooth;
+        }
+
+        .header-text {
+            font-family: var(--font-serif);
+            font-weight: 600;
+        }
+
+        .section-divider {
+            position: relative;
+            height: 1px;
+            background-color: var(--color-linen);
+            margin: 4rem 0;
+            overflow: visible;
+        }
+
+        .section-divider::before {
+            content: '•';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--color-sage);
+            font-size: 2.5rem;
+            line-height: 0;
+            padding: 0 1rem;
+            background-color: var(--color-cream);
+            z-index: 10;
+        }
+
+        /* Card styles for portfolio projects */
+        .portfolio-card {
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 15px rgba(163, 181, 161, 0.2); /* Soft sage shadow */
+            border-bottom: 4px solid var(--color-rose); /* Pastel rose accent line */
+            border-radius: 0.5rem;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 20px rgba(163, 181, 161, 0.4);
+        }
+
+        .btn-primary {
+            background-color: var(--color-sage);
+            color: var(--color-cream);
+            font-weight: 500;
+            transition: background-color 0.2s;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #7D907A; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar (Consistent across all pages) -->
+    <nav class="sticky top-0 z-50 bg-white/95 shadow-md backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="header-text text-2xl" style="color: var(--color-text);">Caitlin Willson | Portfolio</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="about.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">About Me & Resume</a>
+                    <a href="portfolio.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Portfolio Projects</a>
+                    <a href="blog.html" class="text-sm font-medium hover:text-gray-900 px-3 py-2 rounded-md">Blog & Digital Work</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+
+        <!-- PORTFOLIO GRID -->
+        <section id="portfolio" class="mb-20">
+            <h2 class="header-text text-4xl md:text-5xl text-center mb-16" style="color: var(--color-rose);">
+                Featured Content & Digital Works
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Video Production (Crochet) -->
+                <div class="portfolio-card bg-white p-6">
+                    <h3 class="header-text text-2xl mb-2" style="color: var(--color-text);">Video Production: Crochet Tutorial</h3>
+                    <p class="text-sm text-gray-600 mb-4">Educational Content & Adobe Premiere Pro Coursework</p>
+                    <div class="aspect-video bg-gray-200 flex items-center justify-center rounded-lg mb-4 overflow-hidden">
+                        <!-- Example Video Embed Placeholder - Replace with actual YouTube embed -->
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="Crochet Tutorial Placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-gray-700 mb-4">**Project Focus:** Half Double Crochet Washcloth. This video project was created to demonstrate proficiency in Adobe Premiere Pro editing, YouTube optimization, and clear, step-by-step instructional design.</p>
+                    <a href="https://www.youtube.com" target="_blank" class="text-sm font-semibold underline" style="color: var(--color-sage);">Watch on YouTube &raquo;</a>
+                </div>
+                
+                <!-- Project 2: Podcast -->
+                <div class="portfolio-card bg-white p-6">
+                    <h3 class="header-text text-2xl mb-2" style="color: var(--color-text);">Podcast: "Parts Per Million"</h3>
+                    <p class="text-sm text-gray-600 mb-4">Audio Production & Storytelling | Focus: Shared Human Experience</p>
+                    <div class="aspect-square bg-gray-200 flex items-center justify-center rounded-lg mb-4">
+                        <!-- Placeholder for Embedded Podcast Player -->
+                        <span class="text-gray-500 text-center p-4">Podcast Player Embed Placeholder</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">**Feature Episode:** *Homesteading with Glendora Maines*. Explores how diverse individual lived experiences contribute to the complexity and richness of the global community, fostering mutual understanding.</p>
+                    <a href="#" class="text-sm font-semibold underline" style="color: var(--color-sage);">Listen to the Episode &raquo;</a>
+                </div>
+
+                <!-- Project 3: Magazine/Editorial -->
+                <div class="portfolio-card bg-white p-6">
+                    <h3 class="header-text text-2xl mb-2" style="color: var(--color-text);">Magazine: "The Operationalist"</h3>
+                    <p class="text-sm text-gray-600 mb-4">Editorial Feature & Professional Insight | Role: Writer/Editor</p>
+                    <div class="h-48 bg-gray-200 flex items-center justify-center rounded-lg mb-4">
+                        <!-- Placeholder for Magazine Mockup -->
+                        <span class="text-gray-500 text-center p-4">Magazine Layout Mockup</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">An in-depth article featuring the essential transition of the Executive Assistant role into the more strategic **Executive Operations Strategist** in an AI-driven workplace.</p>
+                    <a href="#" class="text-sm font-semibold underline" style="color: var(--color-sage);">Read The Operationalist &raquo;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floral/Earthy Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Link to Blog -->
+        <section class="text-center">
+            <h2 class="header-text text-3xl mb-6" style="color: var(--color-sage);">See More Digital Work</h2>
+            <p class="text-lg mb-8">Visit the Blog & Digital Works page for infographics, print layouts, and thought leadership.</p>
+            <a href="blog.html" class="btn-primary text-lg">Go to Blog &raquo;</a>
+        </section>
+
+    </main>
+
+    <!-- Footer / Contact Section (Must be in ALL four files) -->
+    <footer class="py-12 mt-20" style="background-color: var(--color-linen);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm" style="color: var(--color-text);">
+            
+            <!-- Contact Info Column -->
+            <div>
+                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Connect</h4>
+                <p class="font-medium">Caitlin Willson</p>
+                <p>126 Willowbrook, Ct</p>
+                <p>Kingsport, TN 37660</p>
+                <p>Phone: (423) 863-8089</p>
+                <p>Email: <a href="mailto:caitlinwillson@gmail.com" class="underline hover:text-gray-900">caitlinwillson@gmail.com</a></p>
+            </div>
+
+            <!-- Navigation Links Column -->
+            <div>
+                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Navigation</h4>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="about.html" class="hover:underline">About Me & Resume</a></li>
+                    <li><a href="portfolio.html" class="hover:underline">Portfolio Projects</a></li>
+                    <li><a href="blog.html" class="hover:underline">Blog & Digital Work</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Sign Up Column -->
+            <div>
+                <h4 class="header-text text-lg mb-4" style="color: var(--color-sage);">Stay Updated</h4>
+                <p class="mb-3">Sign up for my (fake) newsletter for the latest projects and insights!</p>
+                <form onsubmit="alert('Thank you for signing up for Caitlin’s newsletter! (This is a fake sign up form for the project)'); return false;">
+                    <input type="email" placeholder="Your Email Address" required class="w-full p-2 mb-3 rounded-md border" style="border-color: var(--color-rose); background-color: var(--color-cream); color: var(--color-text);">
+                    <button type="submit" class="btn-primary w-full text-base">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p class="text-xs" style="color: var(--color-text); font-family: var(--font-serif);">&copy; 2025 Caitlin Willson Portfolio. All Rights Reserved. | Final Academic Project</p>
+        </div>
+    </footer>
+
+</body>
+</html>
