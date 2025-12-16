@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <style>
+   <style>
         /* * 🎨 Custom Aesthetic Styling (Repeated for multi-page consistency) */
         
         :root {
@@ -174,7 +174,7 @@
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
 
         <!-- PORTFOLIO CAROUSEL SECTION -->
         <section id="portfolio" class="mb-20">
@@ -182,14 +182,17 @@
                 Featured Content & Digital Works
             </h2>
 
-            <div class="relative flex items-center">
-                <!-- Scroll Left Button -->
-                <button onclick="scrollCarousel('left')" class="absolute left-0 z-20 p-3 bg-white rounded-full shadow-lg hover:shadow-xl ml-2 -translate-y-1/2 top-1/2 hidden sm:block" style="color: var(--color-sage);">
+            <!-- CAROUSEL WRAPPER: Removed 'relative flex items-center' from here -->
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                
+                <!-- Scroll Left Button (Now positioned next to the carousel) -->
+                <button onclick="scrollCarousel('left')" class="p-3 bg-white rounded-full shadow-lg hover:shadow-xl sm:order-1" style="color: var(--color-sage);">
                     &lt;
                 </button>
 
                 <!-- Carousel Container -->
-                <div id="project-carousel" class="flex p-2 carousel-container w-full">
+                <!-- The carousel div remains flex to keep cards horizontal -->
+                <div id="project-carousel" class="flex p-2 carousel-container w-full overflow-x-auto sm:order-2">
                     
                     <!-- NEW PROJECT CARDS GO HERE (START OF LIST) -->
 
